@@ -703,12 +703,10 @@
         height: auto;
         padding: 5px;
         border-radius: 8px;
-        opacity: 0px;
     }
 
     .container {
         height: auto;
-        opacity: 0px;
         flex-direction: column;
         margin-left: 20px;
     }
