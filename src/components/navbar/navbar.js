@@ -20,7 +20,7 @@ const Navbar = () => {
           <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
             <li><a href="/">Home</a></li>
             <li><a href="/services">Services</a></li>
-            <li><a href="/project">Project</a></li>
+            <li><a href="/projects">Project</a></li>
             <li><a href="/aboutus">About us</a></li>
           </ul>
           <button className="contact-btn" onClick={() => setIsModalOpen(true)} >Get in touch</button>

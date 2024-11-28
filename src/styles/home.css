@@ -396,11 +396,11 @@
 
 }
 
-.testimonal-name {
+.testimonial-name {
     margin-top: 10px;
 }
 
-.testimonal-name h4 {
+.testimonial-name h4 {
     font-family: 'Kumbh Sans';
     font-size: 24px;
     font-weight: 500;
@@ -409,7 +409,7 @@
     color: #1A1A1A;
 }
 
-.testimonal-name p {
+.testimonial-name p {
     font-family: 'Kumbh Sans';
     font-size: 16px;
     font-weight: 400;
@@ -817,8 +817,6 @@
         margin-left: 20px;
     }
 
-
-
     .our-services-p p {
         font-family: 'Kumbh Sans';
         font-size: 14px;
@@ -1009,10 +1007,9 @@
 
     .scroll-client {
         display: flex;
-       
     }
 
-    .testimonal-name h4 {
+    .testimonial-name h4 {
         font-size: 16px;
     }
 
@@ -1037,8 +1034,6 @@
         background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
     }
 
-
-
     .s-arrow {
         margin-top: 15px;
     }
@@ -1047,8 +1042,6 @@
     .sright-icon {
         font-size: 2rem;
     }
-
-
 }
 
 

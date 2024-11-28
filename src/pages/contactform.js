@@ -8,7 +8,7 @@ const ContactForm = ({ onClose }) => {
       <button className="close-button" onClick={onClose}>
       <RxCross2 />
         </button>
-        <h2>Share your details</h2>
+        <h1>Share your details</h1>
         <p>Our team will get back to you in 2-3 working days</p>
         <form>
         

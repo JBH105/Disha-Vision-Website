@@ -28,7 +28,6 @@
     height: 22px;
     top: 24px;
     margin-left: 100px;
-
 }
 
 .menu-toggle {
@@ -52,6 +51,11 @@
     text-transform: capitalize;
 }
 
+.navbar-links li:focus,
+.navbar-links li:active {
+    color: #00000080;
+}
+
 .navbar-links a {
     color: #00000080;
     text-decoration: none;
@@ -73,6 +77,7 @@
     padding: 11px 12px;
     background: #1A1A1A;
     color: #FFFFFF;
+    border: none;
     border-radius: 8px;
     font-family: 'Kumbh Sans';
     font-size: 16px;
@@ -113,11 +118,11 @@
         top: 17px;
         border-radius: 8px;
         margin-right: 0;
+        border: none;
     }
 
     .navbar-links {
         display: none;
-        flex-direction: column;
         width: 100%;
         height: auto;
         gap: 15px;
@@ -131,12 +136,16 @@
     }
 
     .navbar-links a {
-        color: black;
-        font-size: 14px;
+        color: #00000080;
+        font-size: 16px;
     }
 
     .navbar-links.active {
         display: block;
+    }
+
+    .navbar-links.active:hover {
+        color: #1A1A1A;
     }
 
     .navbar-links li {
@@ -156,7 +165,6 @@
         font-size: 16px;
         margin-top: 1px;
         font-weight: 900;
-
     }
 
     .navbar-links {
@@ -169,7 +177,6 @@
         font-size: 13px;
         padding: 15px;
         margin-right: 5px;
-
     }
 
     .contact-btn {

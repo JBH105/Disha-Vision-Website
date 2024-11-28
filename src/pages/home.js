@@ -24,10 +24,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../styles/home.css'
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { LuBuilding2 } from 'react-icons/lu';
 const Home = () => {
   const [scrollDirection, setScrollDirection] = useState("scroll-left");
+  let sliderRef = React.useRef();
+
+  const handleNext = () => sliderRef.current.slickNext();
+  const handlePrev = () => sliderRef.current.slickPrev();
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -52,6 +57,22 @@ const Home = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: false,
+  };
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollAmount = clientWidth / 2;
+      if (direction === "left") {
+        scrollRef.current.scrollTo({ left: scrollLeft - scrollAmount, behavior: "smooth" });
+        setScrollDirection("scroll-left");
+      }
+      else {
+        scrollRef.current.scrollTo({ left: scrollLeft + scrollAmount, behavior: "smooth" });
+        setScrollDirection("scroll-right");
+      }
+    }
   };
   const testimonials = [
     {
@@ -139,7 +160,8 @@ const Home = () => {
       bgColor: '#53A451',
     },
   ];
-  const [showMore, setShowMore] = useState(false);
+
+
   return (
     <div className='home-back'>
       <div className="home-section">
@@ -151,18 +173,20 @@ const Home = () => {
           <h2>Redefining architecture with creativity, precision, and lasting impact</h2>
         </div>
         <div className="slider-container">
-          <Slider {...settings}>
+          <Slider ref={sliderRef} {...settings}>
             {images.map((image, index) => (
               <div key={index} className="image-content">
                 <img src={image.src} alt={image.alt} className="home-fist" />
-                <div className="image-caption"><LuBuilding2 className='icon-slider' /> {image.alt}</div>
+                <div className="image-caption">
+                  <LuBuilding2 className="icon-slider" /> {image.alt}
+                </div>
               </div>
             ))}
           </Slider>
         </div>
-        <div className='icon-arrow'>
-          <FaArrowLeftLong className='left-icon' />
-          <FaArrowRightLong className='right-icon' />
+        <div className="icon-arrow">
+          <FaArrowLeftLong className="left-icon" onClick={handlePrev} />
+          <FaArrowRightLong className="right-icon" onClick={handleNext} />
         </div>
       </div>
 
@@ -324,37 +348,38 @@ const Home = () => {
       <div className="scroll-container">
         <h1>TESTIMONIALS</h1>
         <h2>Hear it from our customers</h2>
-        <div className='scroll-client'>
-          <div className={`scroll-track ${scrollDirection}`}>
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="testimonial-card">
-                <div className="image-section">
-                  <div className='one'>
-                    <img
-                      src={testimonial.src}
-                      alt={testimonial.name}
-                      style={{ backgroundColor: testimonial.bgColor }}
-                    />
-                    <div className="testimonal-name">
-                      <h4>{testimonial.name}</h4>
-                      <p>{testimonial.designation}</p>
+
+        <div className="testimonial-container">
+          <div className="scroll-client">
+            <div ref={scrollRef} className={`scroll-track ${scrollDirection}`}>
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="testimonial-card">
+                  <div className="image-section">
+                    <div className="one">
+                      <img
+                        src={testimonial.src}
+                        alt={testimonial.name}
+                        style={{ backgroundColor: testimonial.bgColor }}
+                      />
+                      <div className="testimonial-name">
+                        <h4>{testimonial.name}</h4>
+                        <p>{testimonial.designation}</p>
+                      </div>
+                    </div>
+                    <div className="t-text">
+                      <h3 className="testimonial-text">
+                        <p>‟</p> {testimonial.text}
+                      </h3>
                     </div>
                   </div>
-
-                  <div className="t-text">
-                    <h3 className="testimonial-text">
-                      <p>‟</p> {testimonial.text}
-                    </h3>
-                  </div>
                 </div>
-
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="s-arrow">
-          <FaArrowLeftLong className="sleft-icon" />
-          <FaArrowRightLong className="sright-icon" />
+          <div className="s-arrow">
+            <FaArrowLeftLong className="sleft-icon" onClick={() => scroll("left")} />
+            <FaArrowRightLong className="sright-icon" onClick={() => scroll("right")} />
+          </div>
         </div>
       </div>
 
@@ -364,4 +389,3 @@ const Home = () => {
 };
 
 export default Home;
-

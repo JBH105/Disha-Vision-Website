@@ -9,11 +9,15 @@
 
 .footer-project h2 {
     font-family: 'Kumbh Sans';
+    height: 60px;
     size: 48px;
     margin-top: 30px;
     font-weight: 500;
     color: #FFFFFF;
     line-height: 59.53px;
+    text-align: center;
+
+
 }
 
 .footer-connect-btn {
@@ -21,7 +25,7 @@
     color: #1A1A1A;
     font-family: 'Kumbh Sans';
     font-weight: 500;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 8px;
     border: 1px;
     padding: 11px 12px;
@@ -32,14 +36,14 @@
 }
 
 .footer-contact h2 {
-    font-family: 'Kumbh Sans';
+    font-family: 'Satoshi';
     color: #FFFFFF;
     font-size: 16px;
     font-weight: 900;
     line-height: 22.32px;
     align-items: center;
     letter-spacing: 3px;
-    margin-bottom: 20px;
+    margin-bottom: 20px;    
 
 }
 
@@ -50,6 +54,9 @@
     font-weight: 400;
     line-height: 22.32px;
     align-items: center;
+    justify-content: center;
+    height: 118px;
+
 }
 
 .footer-web {
