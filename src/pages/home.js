@@ -34,7 +34,7 @@ const Home = () => {
       setScrollDirection((prev) =>
         prev === "scroll-left" ? "scroll-right" : "scroll-left"
       );
-    }, 15000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);
@@ -96,6 +96,48 @@ const Home = () => {
       text: `Architectural field is very vast and dynamic field, it always looks difficult and confusing when you start any project, often there is threat of impossibility. But things become very simple and doable, getable when Akash Mohota is with me. I am associated with him since last two decades, we label him as our family doctor in the architectural field. He is so simple, humble, hardworking, never money oriented, transparent, listen your ideas, will get involved into the depth, always cheerful and positive. His vision and imagination is matchless. I am happy to be associated with such unique personality Project Laali Palace is on the verge of last chapters, I am sure under Akash’s guidelines it will be town’s beautiful monument.`,
       bgColor: '#53A451',
     },
+    {
+      src: image1,
+      name: 'Dr Vijay Bakhtar',
+      designation: 'M.D. (NAG), F.I.C.A (USA)',
+      text: `Architectural field is very vast and dynamic field, it always looks difficult and confusing when you start any project, often there is threat of impossibility. But things become very simple and doable, getable when Akash Mohota is with me. I am associated with him since last two decades, we label him as our family doctor in the architectural field. He is so simple, humble, hardworking, never money oriented, transparent, listen your ideas, will get involved into the depth, always cheerful and positive. His vision and imagination is matchless. I am happy to be associated with such unique personality Project Laali Palace is on the verge of last chapters, I am sure under Akash’s guidelines it will be town’s beautiful monument`,
+      bgColor: '#E3B23C',
+    },
+    {
+      src: image2,
+      name: 'Vaibhav Mohta',
+      designation: 'Managing director and CEO',
+      text: `Architectural field is very vast and dynamic field, it always looks difficult and confusing when you start any project, often there is threat of impossibility. But things become very simple and doable, getable when Akash Mohota is with me. I am associated with him since last two decades, we label him as our family doctor in the architectural field. He is so simple, humble, hardworking, never money oriented, transparent, listen your ideas, will get involved into the depth, always cheerful and positive. His vision and imagination is matchless. I am happy to be associated with such unique personality Project Laali Palace is on the verge of last chapters, I am sure under Akash’s guidelines it will be town’s beautiful monument`,
+      bgColor: '#4A90A4',
+    },
+    {
+      src: image3,
+      name: 'Vaibhav Mohta',
+      designation: 'Managing director and CEO',
+      text: `Architectural field is very vast and dynamic field, it always looks difficult and confusing when you start any project, often there is threat of impossibility. But things become very simple and doable, getable when Akash Mohota is with me. I am associated with him since last two decades, we label him as our family doctor in the architectural field. He is so simple, humble, hardworking, never money oriented, transparent, listen your ideas, will get involved into the depth, always cheerful and positive. His vision and imagination is matchless. I am happy to be associated with such unique personality Project Laali Palace is on the verge of last chapters, I am sure under Akash’s guidelines it will be town’s beautiful monument.`,
+      bgColor: '#53A451',
+    },
+    {
+      src: image1,
+      name: 'Dr Vijay Bakhtar',
+      designation: 'M.D. (NAG), F.I.C.A (USA)',
+      text: `Architectural field is very vast and dynamic field, it always looks difficult and confusing when you start any project, often there is threat of impossibility. But things become very simple and doable, getable when Akash Mohota is with me. I am associated with him since last two decades, we label him as our family doctor in the architectural field. He is so simple, humble, hardworking, never money oriented, transparent, listen your ideas, will get involved into the depth, always cheerful and positive. His vision and imagination is matchless. I am happy to be associated with such unique personality Project Laali Palace is on the verge of last chapters, I am sure under Akash’s guidelines it will be town’s beautiful monument`,
+      bgColor: '#E3B23C',
+    },
+    {
+      src: image2,
+      name: 'Vaibhav Mohta',
+      designation: 'Managing director and CEO',
+      text: `Architectural field is very vast and dynamic field, it always looks difficult and confusing when you start any project, often there is threat of impossibility. But things become very simple and doable, getable when Akash Mohota is with me. I am associated with him since last two decades, we label him as our family doctor in the architectural field. He is so simple, humble, hardworking, never money oriented, transparent, listen your ideas, will get involved into the depth, always cheerful and positive. His vision and imagination is matchless. I am happy to be associated with such unique personality Project Laali Palace is on the verge of last chapters, I am sure under Akash’s guidelines it will be town’s beautiful monument`,
+      bgColor: '#4A90A4',
+    },
+    {
+      src: image3,
+      name: 'Vaibhav Mohta',
+      designation: 'Managing director and CEO',
+      text: `Architectural field is very vast and dynamic field, it always looks difficult and confusing when you start any project, often there is threat of impossibility. But things become very simple and doable, getable when Akash Mohota is with me. I am associated with him since last two decades, we label him as our family doctor in the architectural field. He is so simple, humble, hardworking, never money oriented, transparent, listen your ideas, will get involved into the depth, always cheerful and positive. His vision and imagination is matchless. I am happy to be associated with such unique personality Project Laali Palace is on the verge of last chapters, I am sure under Akash’s guidelines it will be town’s beautiful monument.`,
+      bgColor: '#53A451',
+    },
   ];
   const [showMore, setShowMore] = useState(false);
   return (
@@ -113,7 +155,7 @@ const Home = () => {
             {images.map((image, index) => (
               <div key={index} className="image-content">
                 <img src={image.src} alt={image.alt} className="home-fist" />
-                <div className="image-caption"><LuBuilding2  className='icon-slider'/> {image.alt}</div>
+                <div className="image-caption"><LuBuilding2 className='icon-slider' /> {image.alt}</div>
               </div>
             ))}
           </Slider>
@@ -131,16 +173,16 @@ const Home = () => {
           <h2 className="home-timeless">Timeless architecture with passion & precision</h2>
         </div>
         <div className="home-paragraphs">
-          <p>
+          <h1>
             At Disha Vision, we believe architecture is more than just designing buildings—it’s about shaping experiences, communities, and the future.
             With 25 years of dedication to innovation and excellence, we have earned our reputation as a trusted leader in the architectural space. Each project we undertake is a reflection of our passion for creative planning, meticulous attention to detail, and our commitment to elevating spaces into art forms that inspire and endure.
-          </p>
+          </h1>
 
-          <p className={`home-paragraphs-extra ${showMore ? 'show' : 'hide'}`}>
+          <h2 className={`home-paragraphs-extra ${showMore ? 'show' : 'hide'}`}>
             Our core values—integrity, innovation, and collaboration—drive every design we create. From conceptualisation to execution, we
             approach every project with a thoughtful balance of functionality and aesthetics, ensuring it not only meets the client’s needs but
             also enhances the environment and enriches lives. At Disha Vision, we don't just build; we craft stories that stand the test of time.
-          </p>
+          </h2>
           <button onClick={() => setShowMore(!showMore)} className='read-more-btn'>
             {showMore ? "...Read less" : "...Read more"}
           </button>
@@ -163,7 +205,7 @@ const Home = () => {
       </div>
 
       {/*services section*/}
-      <div className=' our-services'>
+      <div className='our-services'>
         <div className='our-services-h1'>
           <h1>OUR SERVICES</h1>
           <h2>Our expertise, your dream spaces realized</h2>
@@ -250,7 +292,7 @@ const Home = () => {
           </div>
           <div className="grid-item">
             <div className='g-image'>
-              <img src={project5} alt="Commercial cum residential" className="grid-image"/>
+              <img src={project5} alt="Commercial cum residential" className="grid-image" />
               <h2>Commercial cum residential</h2>
             </div>
           </div>
