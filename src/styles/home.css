@@ -74,7 +74,6 @@
     height: 64px;
     border-radius: 8px;
     padding-top: 20px;
-    opacity: 0px;
 }
 
 .image-content {
@@ -1099,14 +1098,12 @@
         height: auto;
         padding: 5px;
         border-radius: 8px;
-        opacity: 0px;
     }
 
     .container {
         width: 100%;
         padding: 40px;
         gap: 16px;
-        opacity: 0px;
     }
 
     .home-text {

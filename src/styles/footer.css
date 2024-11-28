@@ -112,7 +112,7 @@
 @media (min-width: 768px) and (max-width:1024px) {
 
     .footer-web {
-      justify-content: space-between;
-       margin-top: 20px;
+        justify-content: space-between;
+        margin-top: 20px;
     }
 }
