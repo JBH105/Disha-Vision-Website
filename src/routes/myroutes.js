@@ -2,7 +2,8 @@ import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Navbar from '../components/navbar/navbar';
 import Home from '../pages/home';
-
+import '@fontsource/kumbh-sans';
+import Footer from '../components/footer/footer';
 
 function Myrouts() {
     return (
@@ -17,6 +18,7 @@ function Myrouts() {
                 <Route path="/" element={<Home />} />
                
             </Routes>
+            <Footer/>
         </Router>
     );
 }

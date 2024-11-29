@@ -5,15 +5,18 @@
     box-sizing: border-box;
 }
 
-.home-back {
-    background-color: #FFFFFF;
-    width: 100%;
+.container_home {
+    max-width: 90vw;
+    margin: 0px auto;
 }
+
 
 .home-section {
     padding-top: 10%;
     align-items: center;
     text-align: center;
+    max-width: 90vw;
+    margin-bottom: 5%;
 }
 
 .home-content {
@@ -29,12 +32,12 @@
     font-family: 'Kumbh Sans';
     font-size: 14px;
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: 0.2em;
 }
 
 .home-descripion {
     margin-top: 10px;
-    margin-bottom: 5%;
+    margin-bottom: 40px;
 }
 
 .home-descripion h1 {
@@ -52,10 +55,9 @@
 }
 
 .slider-container {
-    width: 80%;
     background-color: #EDF7FF;
     border-radius: 10px;
-    margin: 0 auto;
+    overflow: hidden;
 }
 
 .image-caption {
@@ -115,29 +117,28 @@
 }
 
 /*vision section*/
-.container {
-    margin-top: 10%;
+.container-section {
+    max-width: 100vw;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .home-text {
-    width: 580px;
+    width: 538px;
 }
 
 .home-text h1 {
     font-family: 'Kumbh Sans';
     font-size: 14px;
     font-weight: 600;
-    letter-spacing: 2px;
     color: #E3B23C;
+    letter-spacing: 0.2em;
 }
 
 .home-text h2 {
     font-family: 'Kumbh Sans';
     font-size: 48px;
     font-weight: 500;
-    letter-spacing: 2px;
     color: #000000;
 }
 
@@ -179,20 +180,16 @@
 
 /* statistics section*/
 .statistics-section {
-    margin-top: 10%;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin-top: 50px;
+    padding: 28px 0;
     display: flex;
-    width: 90%;
-    margin: 5%;
+    max-width: 100vw;
     text-align: center;
     align-items: center;
     justify-content: space-around;
     border-bottom: 0.3px solid #888888;
     border-top: 0.3px solid #888888;
     margin-bottom: 10%;
-
-
 }
 
 .stat h1 {
@@ -211,7 +208,9 @@
 }
 
 /*services section*/
-.our-services {
+.our-services-section {
+    margin: 0 auto;
+    max-width: 100vw;
     align-items: center;
     text-align: center;
 }
@@ -221,7 +220,7 @@
     font-size: 14px;
     font-weight: 600;
     font-family: 'Kumbh Sans';
-    letter-spacing: 2px;
+    letter-spacing: 0.2em;
 }
 
 .our-services-h1 h2 {
@@ -249,12 +248,13 @@
 }
 
 .services-description {
+    margin: 0 auto;
     display: flex;
+    justify-content:center;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 5%;
+    margin-top: 50px;
     margin-bottom: 10%;
-    gap: 30px;
+    gap: 60px;
 }
 
 .service-contant {
@@ -265,12 +265,12 @@
     padding: 10px;
     background-color: #FFFFFF;
     text-align: center;
-    border: 0.3px solid #888888
+    border: 0.3px solid #888888;
 }
 
 
 .s-describe {
-    max-width: 516px;
+    max-width: 556px;
     text-align: left;
     padding-left: 16px;
 }
@@ -354,6 +354,11 @@
     margin-top: 5%;
     overflow: hidden;
 
+}
+
+.scroll-client:hover .scroll-track {
+    animation-play-state: paused;
+    cursor: pointer;
 }
 
 .scroll-client::before,
@@ -495,11 +500,12 @@
 }
 
 /*projects-container */
-.projects-container {
+.projects-container-section {
+    margin: 0 auto;
+    max-width: 100vw;
     text-align: center;
     padding: 40px 20px;
     background-color: #f8f8f8;
-    margin: 10px;
 }
 
 .projects-title {
@@ -643,14 +649,14 @@
 
 /* Responsive styles for mobile devices */
 @media (max-width: 430px) and (min-width:320px) {
-
-    .home-back {
-        width: 100%;
-        align-items: center;
+    .container_home {
+        max-width: 90vw;
+        margin: 0px auto;
     }
 
     .home-section {
-        margin-top: 20%;
+        max-width: 100vw;
+        margin-top: 60px;
         justify-content: center;
     }
 
@@ -661,9 +667,8 @@
     }
 
     .home-descripion {
-        height: 138px;
         align-items: center;
-        margin-left: 16px;
+
     }
 
     .home-descripion h1 {
@@ -679,12 +684,8 @@
         font-size: 16px;
         font-weight: 400;
         line-height: 19.84px;
+        width: 328px;
         text-align: center;
-    }
-
-    .slider-container {
-        width: 80%;
-        left: 20px;
     }
 
     .image-caption {
@@ -704,10 +705,8 @@
         border-radius: 8px;
     }
 
-    .container {
-        height: auto;
+    .container-section {
         flex-direction: column;
-        margin-left: 20px;
     }
 
     .home-text {
@@ -729,7 +728,7 @@
     }
 
     .home-paragraphs {
-        width: 95%;
+        width: 100%;
         margin-top: 10px;
     }
 
@@ -795,9 +794,10 @@
     }
 
     .our-services {
-        width: 100%;
-        gap: 28px;
+        max-width: 100vw;
+        gap: 12px;
         text-align: left;
+
     }
 
     .our-services-h1 h1 {
@@ -805,8 +805,8 @@
         font-size: 10px;
         font-weight: 600;
         line-height: 12.4px;
+        text-align: left;
         letter-spacing: 0.2em;
-        margin-left: 20px;
     }
 
     .our-services-h1 h2 {
@@ -814,7 +814,7 @@
         font-size: 26px;
         font-weight: 500;
         line-height: 32.25px;
-        margin-left: 20px;
+        text-align: left;
     }
 
     .our-services-p p {
@@ -823,8 +823,7 @@
         font-weight: 300;
         line-height: 17.36px;
         text-align: left;
-        width: 380px;
-        margin-left: 20px;
+        width: 328px;
     }
 
     .services-description {
@@ -835,10 +834,8 @@
     }
 
     .service-contant {
-        height: 364px;
         padding: 8px 8px 16px 8px;
         border-radius: 8px;
-        border: 0.3px;
         border: 0.3px solid #888888;
     }
 
@@ -853,9 +850,6 @@
 
     .s-describe {
         width: 296px;
-        height: 166px;
-        left: 16px;
-        gap: 14px;
     }
 
     .s-describe h1 {
@@ -1046,11 +1040,14 @@
 
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    .home-back {
-        width: 100%;
+    .container_home {
+        max-width: 90vw;
+        margin: 0px auto;
     }
 
     .home-section {
+        max-width: 100vw;
+        margin: 0 auto;
         padding-top: 15%;
     }
 
@@ -1073,7 +1070,7 @@
     }
 
     .slider-container {
-        width: 90%;
+        margin: 0 auto;
     }
 
     .image-caption {
@@ -1093,10 +1090,8 @@
         border-radius: 8px;
     }
 
-    .container {
-        width: 100%;
-        padding: 40px;
-        gap: 16px;
+    .container-section {
+        margin-top: 40px;
     }
 
     .home-text {
@@ -1121,9 +1116,8 @@
     }
 
     .statistics-section {
-        display: flex;
-        align-items: center;
-        width: 90%;
+        max-width: 100vw;
+
     }
 
     .stat {
@@ -1135,8 +1129,8 @@
         font-size: 18px;
     }
 
-    .our-services {
-        width: 90%;
+    .our-services-section {
+        max-width: 100vw;
         margin: 0 auto;
     }
 
@@ -1153,9 +1147,14 @@
         text-align: center;
     }
 
+    .services-description {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100vw;
+    }
+
     .service-contant {
-        width: 100%;
-        margin: 10px 0;
+        max-width: 400px;
     }
 
     .s-describe p {

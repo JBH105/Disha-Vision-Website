@@ -1,7 +1,6 @@
 /* General Navbar Styles */
 .navbar {
     background-color: #FFFFFF;
-    padding: 10px 20px;
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -12,9 +11,10 @@
 }
 
 .navbar-container {
+    max-width: 90vw;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    margin: 0 auto;
 }
 
 .navbar-logo {
@@ -23,11 +23,10 @@
     font-weight: 900;
     color: #3A3A38;
     letter-spacing: 3.4px;
-    margin: 0;
     width: 172px;
     height: 22px;
-    top: 24px;
-    margin-left: 100px;
+    text-transform: uppercase;
+    margin-top: 24px;
 }
 
 .menu-toggle {
@@ -37,6 +36,10 @@
     font-size: 1.5rem;
     color: black;
     cursor: pointer;
+}
+
+.navbar-container ul {
+    margin-top: 14px;
 }
 
 .navbar-links {
@@ -72,8 +75,7 @@
 .contact-btn {
     width: 183px;
     height: 42px;
-    top: 14px;
-    margin-right: 100px;
+    margin-top: 14px;
     padding: 11px 12px;
     background: #1A1A1A;
     color: #FFFFFF;
@@ -93,12 +95,11 @@
 
     .menu-toggle {
         display: block;
+        margin-top: 14px;
     }
 
     .navbar-logo {
-        margin: 0px;
         height: 16px;
-        top: 27px;
         margin-left: 20px;
         font-family: 'Satoshi';
         font-size: 14px;
@@ -127,7 +128,7 @@
         height: auto;
         gap: 15px;
         position: absolute;
-        top: 70px;
+        top: 40px;
         left: 0;
         background-color: rgb(255, 255, 255);
         padding: 10px;
@@ -157,13 +158,12 @@
 /* Responsive Styles */
 @media (min-width: 768px) and (max-width: 1024px) {
     .navbar-container {
-        padding: 0 20px;
+        max-width: 90vw;
     }
 
     .navbar-logo {
         margin-left: 0px;
         font-size: 16px;
-        margin-top: 1px;
         font-weight: 900;
     }
 
@@ -182,6 +182,5 @@
     .contact-btn {
         margin-right: 0px;
         font-size: 14px;
-        margin-top: 1px;
     }
 }

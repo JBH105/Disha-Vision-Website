@@ -17,8 +17,7 @@ import project7 from '../assets/project-7.png';
 import project8 from '../assets/project-8.png';
 import image1 from '../assets/image 4.png';
 import image2 from '../assets/image 5.png';
-import image3 from '../assets/image 6.png'
-import Footer from '../components/footer/footer.js'
+import image3 from '../assets/image 6.png';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -27,22 +26,57 @@ import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 import React, { useEffect, useRef, useState } from 'react';
 import { LuBuilding2 } from 'react-icons/lu';
 const Home = () => {
-  const [scrollDirection, setScrollDirection] = useState("scroll-left");
-  let sliderRef = React.useRef();
 
+  let sliderRef = React.useRef();
   const handleNext = () => sliderRef.current.slickNext();
   const handlePrev = () => sliderRef.current.slickPrev();
   const [showMore, setShowMore] = useState(false);
+  const scrollRef = useRef(null);
+  const [scrollDirection, setScrollDirection] = useState("scroll-left");
+  const [isHovered, setIsHovered] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(true);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollAmount = clientWidth / 2;
+
+      if (direction === "left") {
+        scrollRef.current.scrollTo({
+          left: scrollLeft - scrollAmount,
+          behavior: "smooth",
+        });
+        setScrollDirection("scroll-left");
+      } else {
+        scrollRef.current.scrollTo({
+          left: scrollLeft + scrollAmount,
+          behavior: "smooth",
+        });
+        setScrollDirection("scroll-right");
+      }
+
+
+      setIsScrolling(false);
+      setTimeout(() => {
+        setIsScrolling(true);
+      }, 3000);
+    }
+  };
 
   useEffect(() => {
+    if (isHovered || !isScrolling) return;
     const interval = setInterval(() => {
-      setScrollDirection((prev) =>
-        prev === "scroll-left" ? "scroll-right" : "scroll-left"
-      );
+      if (scrollDirection === "scroll-left") {
+        scroll("right");
+      } else {
+        scroll("left");
+      }
     }, 10000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isHovered, isScrolling, scrollDirection]);
+
+
   const images = [
     { src: View1, alt: "Tapadia city centre, Amravati" },
     { src: View2, alt: "Tapadia city centre, Amravati" },
@@ -58,22 +92,7 @@ const Home = () => {
     autoplaySpeed: 3000,
     arrows: false,
   };
-  const scrollRef = useRef(null);
 
-  const scroll = (direction) => {
-    if (scrollRef.current) {
-      const { scrollLeft, clientWidth } = scrollRef.current;
-      const scrollAmount = clientWidth / 2;
-      if (direction === "left") {
-        scrollRef.current.scrollTo({ left: scrollLeft - scrollAmount, behavior: "smooth" });
-        setScrollDirection("scroll-left");
-      }
-      else {
-        scrollRef.current.scrollTo({ left: scrollLeft + scrollAmount, behavior: "smooth" });
-        setScrollDirection("scroll-right");
-      }
-    }
-  };
   const testimonials = [
     {
       src: image1,
@@ -163,8 +182,9 @@ const Home = () => {
 
 
   return (
-    <div className='home-back'>
-      <div className="home-section">
+    <div className='container_home'>
+      {/*Home section*/}
+      <section className="home-section">
         <div className="home-content">
           <img src={group1} alt='group1'></img><h1>CELEBRATING 25 YEARS OF EXCELLENCE</h1><img src={group2} alt='group2'></img>
         </div>
@@ -188,10 +208,9 @@ const Home = () => {
           <FaArrowLeftLong className="left-icon" onClick={handlePrev} />
           <FaArrowRightLong className="right-icon" onClick={handleNext} />
         </div>
-      </div>
+      </section>
 
-      {/*vision section*/}
-      <div className="container">
+      <section className="container-section">
         <div className="home-text">
           <h1 className="home-vision">OUR VISION</h1>
           <h2 className="home-timeless">Timeless architecture with passion & precision</h2>
@@ -211,9 +230,9 @@ const Home = () => {
             {showMore ? "...Read less" : "...Read more"}
           </button>
         </div>
-      </div>
-      {/* statistics section*/}
-      <div className="statistics-section">
+      </section>
+      {/*Statistics section*/}
+      <section className="statistics-section">
         <div className="stat">
           <h1>500+</h1>
           <p>Projects Designed</p>
@@ -226,10 +245,9 @@ const Home = () => {
           <h1>45</h1>
           <p>cities across India</p>
         </div>
-      </div>
-
-      {/*services section*/}
-      <div className='our-services'>
+      </section>
+      {/*Services section*/}
+      <section className="our-services-section">
         <div className='our-services-h1'>
           <h1>OUR SERVICES</h1>
           <h2>Our expertise, your dream spaces realized</h2>
@@ -246,8 +264,7 @@ const Home = () => {
             </div>
             <div className='s-describe'>
               <h1>Architectural design</h1>
-              <p>Our architectural designs blend innovation with functionality, creating spaces that are visually striking, structurally sound, and crafted for lasting impact Our architectural designs blend innovation with functionality,
-                creating spaces that are visually striking, structurally sound, and crafted for lasting impact</p>
+              <p>Our architectural designs blend innovation with functionality, creating spaces that are visually striking, structurally sound, and crafted for lasting impact</p>
             </div>
           </div>
           <div className='service-contant'>
@@ -256,8 +273,7 @@ const Home = () => {
             </div>
             <div className='s-describe'>
               <h1>Interior design</h1>
-              <p>Our interior designs transform spaces into personalised environments that balance aesthetics, comfort, and functionality, bringing beauty and purpose into every detail. Our architectural designs blend innovation with functionality,
-                creating spaces that are visually striking & structurally sound</p>
+              <p>Our interior designs transform spaces into personalised environments that balance aesthetics, comfort, and functionality, bringing beauty and purpose into every detail.</p>
             </div>
           </div>
           <div className='service-contant'>
@@ -281,9 +297,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
       {/*project section*/}
-      <div className="projects-container">
+      <section className="projects-container-section">
         <h3 className="projects-title">PROJECTS</h3>
         <h1 className="projects-heading">Shaping iconic spaces across every sector</h1>
         <p className="projects-subtitle">
@@ -343,48 +360,54 @@ const Home = () => {
             <h3>states</h3>
           </div>
         </div>
-      </div>
-      {/*TESTIMONIALS*/}
-      <div className="scroll-container">
-        <h1>TESTIMONIALS</h1>
-        <h2>Hear it from our customers</h2>
+      </section>
 
-        <div className="testimonial-container">
-          <div className="scroll-client">
-            <div ref={scrollRef} className={`scroll-track ${scrollDirection}`}>
-              {testimonials.map((testimonial, index) => (
-                <div key={index} className="testimonial-card">
-                  <div className="image-section">
-                    <div className="one">
-                      <img
-                        src={testimonial.src}
-                        alt={testimonial.name}
-                        style={{ backgroundColor: testimonial.bgColor }}
-                      />
-                      <div className="testimonial-name">
-                        <h4>{testimonial.name}</h4>
-                        <p>{testimonial.designation}</p>
+      {/*TESTIMONIALS*/}
+      <section>
+        <div className="scroll-container">
+          <h1>TESTIMONIALS</h1>
+          <h2>Hear it from our customers</h2>
+
+          <div
+            className="testimonial-container"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <div className="scroll-client">
+              <div ref={scrollRef} className={`scroll-track ${scrollDirection}`}>
+                {testimonials.map((testimonial, index) => (
+                  <div key={index} className="testimonial-card">
+                    <div className="image-section">
+                      <div className="one">
+                        <img
+                          src={testimonial.src}
+                          alt={testimonial.name}
+                          style={{ backgroundColor: testimonial.bgColor }}
+                        />
+                        <div className="testimonial-name">
+                          <h4>{testimonial.name}</h4>
+                          <p>{testimonial.designation}</p>
+                        </div>
+                      </div>
+                      <div className="t-text">
+                        <h3 className="testimonial-text">
+                          <p>‟</p> {testimonial.text}
+                        </h3>
                       </div>
                     </div>
-                    <div className="t-text">
-                      <h3 className="testimonial-text">
-                        <p>‟</p> {testimonial.text}
-                      </h3>
-                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+            <div className="s-arrow">
+              <FaArrowLeftLong className="sleft-icon" onClick={() => scroll("left")} />
+              <FaArrowRightLong className="sright-icon" onClick={() => scroll("right")} />
             </div>
           </div>
-          <div className="s-arrow">
-            <FaArrowLeftLong className="sleft-icon" onClick={() => scroll("left")} />
-            <FaArrowRightLong className="sright-icon" onClick={() => scroll("right")} />
-          </div>
         </div>
-      </div>
+      </section>
 
-      <Footer />
-    </div >
+    </div>
   );
 };
 

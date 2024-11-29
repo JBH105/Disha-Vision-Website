@@ -1,17 +1,21 @@
-/* Footer Container */
-.footer-container {
+.footer-container-section {
     background-color: #3A3A38;
-    padding: 40px 20px;
-    text-align: center;
     width: 100%;
     align-items: center;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 90vw;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 30px;
 }
 
 .footer-project h2 {
     font-family: 'Kumbh Sans';
     height: 60px;
     size: 48px;
-    margin-top: 30px;
     font-weight: 500;
     color: #FFFFFF;
     line-height: 59.53px;
@@ -43,7 +47,7 @@
     line-height: 22.32px;
     align-items: center;
     letter-spacing: 3px;
-    margin-bottom: 20px;    
+    margin-bottom: 20px;
 
 }
 
@@ -62,7 +66,7 @@
 .footer-web {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .footer-p p {
@@ -75,18 +79,14 @@
 
 
 @media (max-width: 425px) and (min-width:320px) {
-    .footer-container {
-        padding: 20px 10px;
-    }
-
+    
     .footer-project h2 {
         font-size: 21px;
         line-height: 30px;
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
     .footer-connect-btn {
-        margin-top: 10px;
         font-size: 16px;
         padding: 8px 10px;
     }
@@ -117,6 +117,10 @@
 }
 
 @media (min-width: 768px) and (max-width:1024px) {
+    
+.footer-container {
+    max-width: 90vw;
+}
 
     .footer-web {
         justify-content: space-between;
