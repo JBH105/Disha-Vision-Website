@@ -182,6 +182,7 @@ const Home = () => {
 
 
   return (
+
     <div className='container_home'>
       {/*Home section*/}
       <section className="home-section">
@@ -231,6 +232,8 @@ const Home = () => {
           </button>
         </div>
       </section>
+
+
       {/*Statistics section*/}
       <section className="statistics-section">
         <div className="stat">
@@ -246,6 +249,7 @@ const Home = () => {
           <p>cities across India</p>
         </div>
       </section>
+
       {/*Services section*/}
       <section className="our-services-section">
         <div className='our-services-h1'>
@@ -301,6 +305,7 @@ const Home = () => {
 
       {/*project section*/}
       <section className="projects-container-section">
+
         <h3 className="projects-title">PROJECTS</h3>
         <h1 className="projects-heading">Shaping iconic spaces across every sector</h1>
         <p className="projects-subtitle">
@@ -363,48 +368,45 @@ const Home = () => {
       </section>
 
       {/*TESTIMONIALS*/}
-      <section>
-        <div className="scroll-container">
-          <h1>TESTIMONIALS</h1>
-          <h2>Hear it from our customers</h2>
-
-          <div
-            className="testimonial-container"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            <div className="scroll-client">
-              <div ref={scrollRef} className={`scroll-track ${scrollDirection}`}>
-                {testimonials.map((testimonial, index) => (
-                  <div key={index} className="testimonial-card">
-                    <div className="image-section">
-                      <div className="one">
-                        <img
-                          src={testimonial.src}
-                          alt={testimonial.name}
-                          style={{ backgroundColor: testimonial.bgColor }}
-                        />
-                        <div className="testimonial-name">
-                          <h4>{testimonial.name}</h4>
-                          <p>{testimonial.designation}</p>
-                        </div>
-                      </div>
-                      <div className="t-text">
-                        <h3 className="testimonial-text">
-                          <p>‟</p> {testimonial.text}
-                        </h3>
+      <section className="scroll-container">
+        <h1>TESTIMONIALS</h1>
+        <h2>Hear it from our customers</h2>
+        <div
+          className="testimonial-container"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <div className="scroll-client">
+            <div ref={scrollRef} className={`scroll-track ${scrollDirection}`}>
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="testimonial-card">
+                  <div className="image-section">
+                    <div className="one">
+                      <img src={testimonial.src}
+                        alt={testimonial.name}
+                        style={{ backgroundColor: testimonial.bgColor }}
+                      />
+                      <div className="testimonial-name">
+                        <h4>{testimonial.name}</h4>
+                        <p>{testimonial.designation}</p>
                       </div>
                     </div>
+                    <div className="t-text">
+                      <h3 className="testimonial-text">
+                        <p>‟</p> {testimonial.text}
+                      </h3>
+                    </div>
                   </div>
-                ))}
-              </div>
-            </div>
-            <div className="s-arrow">
-              <FaArrowLeftLong className="sleft-icon" onClick={() => scroll("left")} />
-              <FaArrowRightLong className="sright-icon" onClick={() => scroll("right")} />
+                </div>
+              ))}
             </div>
           </div>
+          <div className="s-arrow">
+            <FaArrowLeftLong className="sleft-icon" onClick={() => scroll("left")} />
+            <FaArrowRightLong className="sright-icon" onClick={() => scroll("right")} />
+          </div>
         </div>
+
       </section>
 
     </div>
