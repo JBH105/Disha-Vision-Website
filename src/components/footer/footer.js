@@ -9,7 +9,7 @@ function Footer() {
                     <h2>Have a challenging project for us?</h2>
                 </div>
                 <div className='footer-btn'>
-                    <button className="footer-connect-btn">Get in touch</button>
+                    <button className="footer-contact-btn">Get in touch</button>
                 </div>
 
                 <div className="footer-contact">

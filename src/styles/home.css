@@ -267,7 +267,6 @@
 }
 
 .service-contant {
-    flex: 1 1 calc(50% - 20px);
     max-width: 580px;
     border-radius: 8px;
     height: 476px;
@@ -281,6 +280,7 @@
 
 .s-describe {
     max-width: 556px;
+    height: 240px;
     text-align: left;
     margin-top: 30px;
     padding-left: 16px;
@@ -849,9 +849,14 @@
     }
 
     .service-contant {
+        height: 350px;
         padding: 8px 8px 16px 8px;
         border-radius: 8px;
         border: 0.3px solid #888888;
+    }
+
+    .s-describe {
+        margin-top: 0;
     }
 
     .s-image {
@@ -1175,8 +1180,8 @@
     }
 
     .service-contant {
-        max-width: 310px;
-        height: auto;
+       max-width: 430px;
+        height: 400px;
         align-items: center;
     }
 
@@ -1200,7 +1205,7 @@
     }
 
     .projects-heading {
-        font-size: 35px;
+        font-size: 32px;
     }
 
     .projects-subtitle {
@@ -1250,6 +1255,7 @@
         margin-right: 0;
         background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
     }
+
     .s-arrow {
         margin-top: 15px;
     }

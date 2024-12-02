@@ -24,7 +24,7 @@
 
 }
 
-.footer-connect-btn {
+.footer-contact-btn {
     background-color: #FFFFFF;
     color: #1A1A1A;
     font-family: 'Kumbh Sans';
@@ -48,6 +48,8 @@
     align-items: center;
     letter-spacing: 3px;
     margin-bottom: 20px;
+    letter-spacing: 0.34em;
+    text-align: center;
 
 }
 
@@ -56,10 +58,11 @@
     color: #FFFFFFCC;
     font-size: 18px;
     font-weight: 400;
+    height: 118px;
     line-height: 22.32px;
     align-items: center;
+    text-decoration-skip-ink: none;
     justify-content: center;
-    height: 118px;
 
 }
 

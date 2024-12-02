@@ -8,12 +8,9 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar">
+
         <div className="navbar-container">
-          <button
-            className="menu-toggle"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle Menu"
-          >
+          <button className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle Menu">
             ☰
           </button>
           <div className="navbar-logo">Disha Vision</div>
