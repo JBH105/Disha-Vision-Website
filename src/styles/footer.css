@@ -1,5 +1,5 @@
 .footer-container-section {
-    background-color: #3A3A38;
+    background-color: #1A1A1A;
     width: 100%;
     align-items: center;
     text-align: center;
@@ -30,9 +30,13 @@
     font-family: 'Kumbh Sans';
     font-weight: 500;
     font-size: 16px;
-    border-radius: 8px;
     border: 1px;
-    padding: 11px 12px;
+    width: 183px;
+    height: 42px;
+    padding: 11px 12px 11px 12px;
+    gap: 10px;
+    border-radius: 8px;
+
 }
 
 .footer-contact {

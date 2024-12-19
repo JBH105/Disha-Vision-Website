@@ -67,6 +67,14 @@
     border: none;
 }
 
+.submit-button:hover {
+    cursor: pointer;
+}
+
+.close-button:hover {
+    cursor: pointer;
+}
+
 
 form {
     margin-top: 5%;

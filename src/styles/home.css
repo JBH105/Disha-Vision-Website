@@ -322,6 +322,7 @@
 .service-contant .s-image:hover img {
     transform: scale(1.1);
     z-index: 1;
+    cursor: pointer;
 }
 
 
@@ -595,6 +596,7 @@
 .grid-item .g-image:hover img {
     transform: scale(1.1);
     z-index: 1;
+    cursor: pointer;
 }
 
 .g-image img {
@@ -1180,7 +1182,7 @@
     }
 
     .service-contant {
-       max-width: 430px;
+        max-width: 430px;
         height: 400px;
         align-items: center;
     }
