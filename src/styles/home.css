@@ -258,18 +258,15 @@
 
 .services-description {
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
     margin-top: 50px;
     margin-bottom: 10%;
-    gap: 60px;
 }
 
 .service-contant {
-    max-width: 580px;
     border-radius: 8px;
-    height: 476px;
     overflow: hidden;
     padding: 10px;
     background-color: #FFFFFF;
@@ -279,8 +276,6 @@
 
 
 .s-describe {
-    max-width: 556px;
-    height: 240px;
     text-align: left;
     margin-top: 30px;
     padding-left: 16px;
@@ -305,6 +300,7 @@
 }
 
 .s-image {
+    width: 100%;
     overflow: hidden;
     display: inline-block;
     border-radius: 8px;
@@ -313,8 +309,10 @@
 
 .s-image img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    object-fit: cover;
+    top: 12px;
+    left: 12px;
+    border-radius: 6px;
     transition: transform 1.1s;
 
 }
@@ -845,16 +843,15 @@
 
     .services-description {
         flex-direction: column;
-        align-items: center;
-        margin-top: 10%;
-        text-align: center;
+        gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+
     }
 
     .service-contant {
-        height: 350px;
-        padding: 8px 8px 16px 8px;
-        border-radius: 8px;
-        border: 0.3px solid #888888;
+        max-width: 100%;
+        height: auto;
+        padding: 15px;
     }
 
     .s-describe {
@@ -862,16 +859,10 @@
     }
 
     .s-image {
-        width: 312px;
-        height: 150px;
         top: 8px;
         left: 8px;
         border-radius: 4px;
 
-    }
-
-    .s-describe {
-        width: 296px;
     }
 
     .s-describe h1 {
@@ -1172,9 +1163,8 @@
     }
 
     .services-description {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 100vw;
+        grid-template-columns: repeat(1, 2r);
+        gap: 40px;
     }
 
     .s-describe {

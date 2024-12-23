@@ -56,7 +56,7 @@
 
 .navbar-links li:focus,
 .navbar-links li:active {
-    color: #00000080;
+    color: #000000;
 }
 
 .navbar-links a {
@@ -86,7 +86,8 @@
     font-weight: 500;
     line-height: 19.84px;
 }
-.contact-btn:hover{
+
+.contact-btn:hover {
     cursor: pointer;
 }
 
@@ -95,6 +96,7 @@
     .navbar-container {
         max-width: 90vw;
     }
+
     .navbar {
         width: 100%;
     }

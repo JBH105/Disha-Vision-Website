@@ -4,6 +4,8 @@ import Navbar from '../components/navbar/navbar';
 import Home from '../pages/home';
 import '@fontsource/kumbh-sans';
 import Footer from '../components/footer/footer';
+import Services from '../pages/services';
+import Projects from '../pages/projects';
 
 function Myrouts() {
     return (
@@ -16,6 +18,8 @@ function Myrouts() {
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="services" element={<Services />} />
+                <Route path="projects" element={<Projects />} />
             </Routes>
             <Footer />
         </Router>
