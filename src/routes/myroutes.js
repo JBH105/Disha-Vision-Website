@@ -6,6 +6,7 @@ import '@fontsource/kumbh-sans';
 import Footer from '../components/footer/footer';
 import Services from '../pages/services';
 import Projects from '../pages/projects';
+import Projectdetails from '../pages/projectdetails';
 
 function Myrouts() {
     return (
@@ -20,6 +21,7 @@ function Myrouts() {
                 <Route path="/" element={<Home />} />
                 <Route path="services" element={<Services />} />
                 <Route path="projects" element={<Projects />} />
+                <Route path="projects/details" element={<Projectdetails />} />
             </Routes>
             <Footer />
         </Router>

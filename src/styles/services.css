@@ -101,7 +101,7 @@
     font-weight: 500;
     line-height: 19.84px;
 }
-
+  
 /* Responsive styles for mobile devices */
 @media (max-width: 430px) and (min-width: 320px) {
     .services_container {
@@ -154,7 +154,6 @@
 
     .s-button {
         text-align: left;
-        padding-left: 0;
     }
 }
 
@@ -164,3 +163,4 @@
         gap: 20px;
     }
 }
+

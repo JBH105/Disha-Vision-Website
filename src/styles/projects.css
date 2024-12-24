@@ -75,14 +75,6 @@
     border-radius: 7.33px;
 }
 
-.project_item h1 {
-    font-family: 'Kumbh Sans';
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 29.77px;
-    text-align: center;
-
-}
 
 .project_picture {
     flex: 2;
@@ -147,6 +139,39 @@
     color: #E3B23C;
 }
 
+.project_item {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project_item.disabled  h1{
+    color: #888888;
+    opacity: 0.7;
+    font-family: 'Kumbh Sans';
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24.8px;
+    text-align: center;
+}
+
+.project_item.active h1{
+    font-family: 'Kumbh Sans';
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29.77px;
+    text-align: center;
+
+}
+.project_item.disabled {
+    color: #888888;
+    opacity: 0.7;
+}
+
+.project_item.active {
+    text-align: center;
+}
+
+
 @media (max-width: 480px) {
     .project_container {
         max-width: 90vw;
@@ -192,3 +217,4 @@
         transform: scale(1.05);
     }
 }
+
