@@ -49,12 +49,26 @@
     border: 0.3px solid #888888;
 }
 
+.service-image {
+    width: 100%;
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 8px;
+    background-size: cover;
+}
+
 .service-image img {
     width: 100%;
     object-fit: cover;
     top: 12px;
     left: 12px;
     border-radius: 6px;
+    transition: transform 1.1s;
+}
+
+.service-image:hover img {
+    transform: scale(1.1);
+    z-index: 1;
 }
 
 .service-describe {
@@ -101,7 +115,7 @@
     font-weight: 500;
     line-height: 19.84px;
 }
-  
+
 /* Responsive styles for mobile devices */
 @media (max-width: 430px) and (min-width: 320px) {
     .services_container {
@@ -163,4 +177,3 @@
         gap: 20px;
     }
 }
-

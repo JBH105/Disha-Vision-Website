@@ -18,7 +18,8 @@
     border-radius: 8px;
     object-fit: cover;
 }
-.devi-image{
+
+.devi-image {
     width: 100%;
     border-radius: 8px;
     object-fit: cover;
@@ -58,27 +59,29 @@
     margin-top: 40px;
     margin-bottom: 40px;
     font-family: 'Kumbh Sans';
-    font-size: 20px;    
+    font-size: 20px;
     font-weight: 400;
     line-height: 24.8px;
     text-align: left;
     color: #888888;
 }
-.adagga-image{
+
+.adagga-image {
     margin-bottom: 20%;
 }
+
 /* Responsive Styles for Mobile (max-width: 480px) */
-@media  (max-width: 480px) {
+@media (max-width: 480px) {
     .apartment-container {
         max-width: 90vw;
         margin: 0 auto;
     }
 
     .apartment-section {
-        padding-top:25%;
+        padding-top: 25%;
     }
 
-    .apartment-image, 
+    .apartment-image,
     .devi-image {
         width: 100%;
         border-radius: 8px;
@@ -109,5 +112,16 @@
 
     .adagga-image {
         margin-bottom: 15%;
+    }
+}
+
+@media (max-width:1024px) and (min-width:768px) {
+    .apartment-container {
+        max-width: 90vw;
+        margin: 0 auto;
+    }
+
+    .apartment-section {
+        padding-top: 15%;
     }
 }

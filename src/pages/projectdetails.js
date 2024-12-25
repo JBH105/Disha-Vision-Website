@@ -1,35 +1,47 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import '../styles/projectdetails.css';
+import { projectData } from '../assets/json/data.local';
 
 function Projectdetails() {
-    const location = useLocation();
-    const project = location.state?.project;
+    const { projectType, projectId } = useParams();
+    const [projectDetailsData, setProjectDetailsData] = useState();
 
-    if (!project) {
-        return <h2>No project details available</h2>;
+    useEffect(() => {
+        const fetchData = () => {
+            if (projectId) {
+                // Ensure projectId is a number for comparison
+                const res = projectData[projectType]?.find((item) => item.id === parseInt(projectId, 10));
+                setProjectDetailsData(res);
+            }
+        };
+        fetchData();
+    }, [projectId, projectType]);
+
+    if (!projectDetailsData) {
+        return <div>Loading...</div>;
     }
 
     return (
         <div className='apartment-container'>
             <section className='apartment-section'>
                 <div className='apartment-image'>
-                    <img src={project.pic} alt={project.title} className='apartment-image' />
+                    <img src={projectDetailsData?.img} alt={projectDetailsData?.title} className='apartment-image' />
                 </div>
                 <div className="apartment-details">
-                    <h2 className="apartment-title">{project.title}</h2>
+                    <h2 className="apartment-title">{projectDetailsData?.title}</h2>
                     <div className="apartment-location">
-                        <span>{project.location}</span>
+                        <span>{projectDetailsData?.location}</span>
                         <span>|</span>
-                        <span>{project.size}</span>
+                        <span>{projectDetailsData?.size}</span>
                         <span>|</span>
-                        <span>{project.type}</span>
+                        <span>{projectDetailsData?.type}</span>
                     </div>
-                    <p className="apartment-description">{project.description}</p>
+                    <p className="apartment-description">{projectDetailsData?.description}</p>
                 </div>
                 <div className='adagga-image'>
-                    {project.otherImages?.map((image, index) => (
-                        <img key={index} src={image} alt='devis-picture' className='devi-image' />
+                    {projectDetailsData?.otherImages?.map((image, index) => (
+                        <img key={index} src={image} alt='devi-picture' className='devi-image' />
                     ))}
                 </div>
             </section>
