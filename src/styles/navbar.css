@@ -55,8 +55,9 @@
 }
 
 .navbar-links li a.active {
-    color: #000000; 
-  }
+    color: #000000;
+}
+
 .navbar-links a {
     color: #00000080;
     text-decoration: none;

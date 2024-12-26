@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import { projectData } from '../assets/json/data.local';
 
 function Projects() {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const [selectedCategory, setSelectedCategory] = useState("apartmentProjects");
 
     const categories = [
@@ -29,38 +29,36 @@ function Projects() {
     const handleCategoryClick = (category) => {
         setSelectedCategory(category);
     };
+
     return (
-        <div className='project_container'>
-            <section className='project_section'>
-                <div className='p_contant'>
+        <div className="project_container">
+            <section className="project_section">
+                <div className="p_contant">
                     <h1>Shaping iconic spaces across every sector</h1>
-                    <p>
-                        From residences to commercial hubs, we redefine excellence in every project.
-                    </p>
+                    <p>From residences to commercial hubs, we redefine excellence in every project.</p>
                 </div>
-                <div className='project_description'>
+                <div className="project_description">
                     <div className="project_items">
                         {categories.map(({ id, label, img }) => (
-                            <>
+                            <React.Fragment key={id}>
                                 <div
-                                    key={id}
                                     className={`project_item ${selectedCategory === id ? 'active' : 'disabled'}`}
                                     onClick={() => handleCategoryClick(id)}
                                 >
                                     <img src={img} alt={label} />
                                     <h1>{label}</h1>
                                 </div>
-                                <hr className='project-line'></hr>
-                            </>
+                                <hr className="project-line" />
+                            </React.Fragment>
                         ))}
                     </div>
 
                     <div className="project_picture">
                         <div className="main">
-                            {projectData[selectedCategory]?.map((project, index) => (
+                            {projectData[selectedCategory]?.map((project) => (
                                 <div
                                     className="project"
-                                    key={index}
+                                    key={project.id}
                                     onClick={() => navigate(`/projects/projectdetails/${selectedCategory}/${project.id}`)}
                                 >
                                     <div className="image-container">
@@ -73,9 +71,7 @@ function Projects() {
                     </div>
                 </div>
             </section>
-
         </div>
-    )
+    );
 }
-
 export default Projects;

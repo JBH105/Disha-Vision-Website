@@ -1,11 +1,11 @@
-.about_container {
+.about_container,
+.about_section {
     max-width: 90vw;
     margin: 0 auto;
 }
 
 .about_section {
     padding-top: 10%;
-    max-width: 90vw;
     margin-bottom: 5%;
 }
 
@@ -16,16 +16,6 @@
     line-height: 39.69px;
     text-align: left;
     color: #1A1A1A;
-
-}
-
-.about_main p {
-    font-family: 'Kumbh Sans';
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24.8px;
-    text-align: left;
-    color: #888888;
 }
 
 .about-member {
@@ -35,19 +25,14 @@
     gap: 20px;
 }
 
-.team-member-img img {
-    width: 100%;
-    align-items: flex-start;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    background-color: #F5ECD1;
-}
-
 .team-member-info {
     gap: 40px;
     margin-top: 50px;
     margin-left: 30px;
+}
+
+.team-member-img img {
+    background-color: #F5ECD1;
 }
 
 .team-member-quote {
@@ -72,15 +57,6 @@
     margin-top: 30px;
 }
 
-.team-member-role {
-    font-family: 'Kumbh Sans';
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24.8px;
-    text-align: left;
-    color: #888888;
-    margin-top: 5px;
-}
 
 .team_memberss {
     display: flex;
@@ -89,13 +65,6 @@
     margin-bottom: 10%;
     margin-top: 6%;
     flex-wrap: wrap;
-}
-
-.team_members img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
 }
 
 .team_members h3 {
@@ -108,6 +77,8 @@
     margin-top: 20px;
 }
 
+.team-member-role,
+.about_main p,
 .team_members p {
     font-family: 'Kumbh Sans';
     font-size: 20px;
@@ -118,15 +89,19 @@
     margin-top: 5px;
 }
 
-.about_image {
-    text-align: center;
-}
-
+.team-member-img img,
+.team_members img,
 .about_image img {
     width: 100%;
     height: auto;
     border-radius: 8px;
+    object-fit: cover;
 }
+
+.about_image {
+    text-align: center;
+}
+
 
 @media (max-width: 480px) {
     .about_container {
@@ -148,9 +123,34 @@
         font-size: 18px;
     }
 
+    .team-member-img img {
+        width: 70%;
+        height: auto;
+    }
+
+    .team-member-quote {
+        font-size: 16px;
+        margin-top: 0px;
+        line-height: 28px;
+    }
+
+    .team-member-name {
+        font-size: 20px;
+    }
+
+    .team-member-role {
+        font-size: 16px;
+        margin-top: 0;
+    }
+
     .about-member {
         flex-direction: column;
         text-align: left;
+    }
+
+    .team_members img {
+        width: 70%;
+        height: auto;
     }
 
     .team-member-info {
@@ -158,16 +158,61 @@
         margin-left: 0;
     }
 
-    .team-member-quote {
-        font-size: 20px;
-        line-height: 28px;
-    }
-
     .team_members h3 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .team_members p {
+        margin-top: 0;
+        font-size: 16px;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .about_container {
+        max-width: 90vw;
+        margin: 0 auto;
+    }
+
+    .about_section {
+        margin-top: 20px;
+        margin-bottom: 10%;
+    }
+
+    .team-member-quote {
         font-size: 18px;
+        line-height: 24px;
+        max-width: 600px;
+        height: auto;
+    }
+
+    .team-member-name {
+        font-size: 20px;
+    }
+
+    .team-member-role {
+        font-size: 16px;
+        margin-top: 0;
+    }
+
+    .team_memberss {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-around;
+    }
+
+    .team_members img {
+        width: 100%;
+        height: auto;
+    }
+
+    .team_members h3 {
+        font-size: 18px;
+    }
+
+    .team_members p {
+        margin-top: 0;
+        font-size: 16px;
     }
 }

@@ -10,7 +10,7 @@ function Projectdetails() {
     useEffect(() => {
         const fetchData = () => {
             if (projectId) {
-                // Ensure projectId is a number for comparison
+                
                 const res = projectData[projectType]?.find((item) => item.id === parseInt(projectId, 10));
                 setProjectDetailsData(res);
             }
