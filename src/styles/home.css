@@ -584,6 +584,7 @@
 
 .g-image:hover h2 {
     transform: translatey(2px);
+    font-weight: 600;
 }
 
 
