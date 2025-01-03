@@ -36,7 +36,7 @@
     padding: 11px 12px 11px 12px;
     gap: 10px;
     border-radius: 8px;
-
+    cursor: pointer;
 }
 
 .footer-contact {
@@ -87,7 +87,7 @@
 
 @media (max-width: 425px) and (min-width:320px) {
     .footer-project h2 {
-        font-size: 21px;
+        font-size: 20px;
         line-height: 30px;
         margin-top: 10px;
     }
@@ -144,3 +144,16 @@
         font-family: 'Kumbh Sans';
     }
 }
+
+/* model.css */
+
+  
+  .modal-container div, 
+  .modal-container p, 
+  .modal-container h1, 
+  .modal-container h2 {
+    text-align: left; /* Ensures alignment of child elements */
+  }
+  
+
+  

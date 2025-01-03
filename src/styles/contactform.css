@@ -92,10 +92,16 @@ label {
 input {
     width: 100%;
     padding: 0.8rem;
+    margin-top: 6px;
     margin-bottom: 1rem;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 12px;
+    
 }
+input::placeholder {
+    color: #88888880;
+  
+  }
 
 @media (max-width: 425px) and (min-width:320px) {
     .modal-content {

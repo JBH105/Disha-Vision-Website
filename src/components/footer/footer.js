@@ -1,6 +1,10 @@
 
+import { useState } from 'react';
+import ContactForm from '../../pages/contactform';
 import '../../styles/footer.css'
 function Footer() {
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
     return (
 
         <footer className="footer-container-section">
@@ -9,7 +13,7 @@ function Footer() {
                     <h2>Have a challenging project for us?</h2>
                 </div>
                 <div className='footer-btn'>
-                    <button className="footer-contact-btn">Get in touch</button>
+                    <button className="footer-contact-btn" onClick={() => setIsModalOpen(true)}>Get in touch</button>
                 </div>
 
                 <div className="footer-contact">
@@ -33,7 +37,15 @@ function Footer() {
                 </div>
 
             </div>
+            {isModalOpen && (
+                <div>
+                    <div className="modal-container">
+                        <ContactForm onClose={() => setIsModalOpen(false)} />
+                    </div>
+                </div>
+            )}
         </footer>
+
     );
 }
 

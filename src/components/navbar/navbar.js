@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../../styles/navbar.css';
 import ContactForm from '../../pages/contactform.js';
-
+import logo from '../../../src/assets/dishalogo.png'
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,7 +18,7 @@ const Navbar = () => {
           >
             ☰
           </button>
-          <div className="navbar-logo">Disha Vision</div>
+          <div className="navbar-logo"><img src={logo} alt='dishalogos'></img></div>
           <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
             <li>
               <NavLink
